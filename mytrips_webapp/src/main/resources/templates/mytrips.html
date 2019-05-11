@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/main}">
+<!--<script--> <!--moved to layout, main-->
+        <!--src="https://code.jquery.com/jquery-1.12.4.js"-->
+        <!--integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="-->
+        <!--crossorigin="anonymous"></script>-->
+<!--&lt;!&ndash; Latest compiled and minified CSS &ndash;&gt;-->
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+
+<!--&lt;!&ndash; Optional theme &ndash;&gt;-->
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">-->
+
+<!--&lt;!&ndash; Latest compiled and minified JavaScript &ndash;&gt;-->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+
+<head>
+    <title th:text="#{mytrips.title}"></title>
+</head>
+
+<body>
+<div layout:fragment="continut">
+    <div class = "container"> <!-- Pt asezare in pagina, pa mijloc -->
+        <h2>My Trips</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Trip Name</th>
+                <th>Date from</th>
+                <th>Date To</th>
+                <th>Impressions</th>
+                <th>Photo1</th>
+                <th>Photo2</th>
+                <th>Location</th>
+                <th></th>
+            </tr>
+            <tr th:each="trip: ${mytrips}">
+                <td th:text="${trip.tripname}"></td>
+                <td th:text="${trip.datefrom}"></td>
+                <td th:text="${trip.dateto}"></td>
+                <td th:text="${trip.impressions}"></td>
+                <td th:text="${trip.photo1}"></td>
+                <td th:text="${trip.photo2}"></td>
+                <td th:text="${trip.location}"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
